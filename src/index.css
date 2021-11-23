@@ -1,13 +1,118 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+:root {
+  --main-color: #c2b121;
+  --main-font: "Roboto", sans-serif;
+  /* --hover-color: #f7f7f7; */
+  --hover-color: #f8f5d7;
+  --default-radius: 5px;
+  --body-color: #efefef;
+  --default-white: #ffffff;
+  --default-border: 1px solid rgb(224, 214, 214);
+  --faded-text: rgb(224, 214, 214);
+}
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  max-width: 100vw;
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  background: var(--body-color);
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.icons {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 10px 15px;
+  height: 70px;
+  background: var(--default-white);
+  border: var(--default-border);
+}
+
+.logo_search {
+  display: flex;
+  width: 45%;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  width: 80px;
+  height: 80px;
+}
+.logo_search form {
+  width: 80%;
+}
+.search-div {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  border: var(--default-border);
+  padding: 0 5px;
+  border-radius: var(--default-radius);
+  overflow: hidden;
+}
+.search-img {
+  width: 30px;
+  height: 30px;
+}
+.search-input {
+  width: 380px;
+  height: 40px;
+  font-size: 16px;
+  border: none;
+}
+.search-input:focus {
+  outline: none;
+}
+.search-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.profile_create {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 25%;
+}
+.create-btn {
+  font-size: 16px;
+  padding: 8px 15px;
+  background: var(--main-color);
+  border-radius: var(--default-radius);
+  font-weight: 400;
+}
+.create-btn:hover {
+  background: var(--hover-color);
+}
+.notification-img {
+  width: 20px;
+  height: 20px;
+}
+.profile-img {
+  width: 38px;
+  height: 38px;
 }

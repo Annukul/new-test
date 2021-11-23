@@ -35,8 +35,9 @@ const Post = ({ post }) => {
   }, [dispatch, post_id]);
 
   const handleSubmit = (e) => {
-    dispatch(addComment(user_id, post_id, commentt));
     e.preventDefault();
+
+    dispatch(addComment(user_id, post_id, commentt));
   };
 
   if (!post.flair) {

@@ -71,7 +71,7 @@ export const commentReducers = (state = { comment: [] }, action) => {
   switch (action.type) {
     case ADD_COMMENT_SUCCESS:
       return {
-        comment: action.payload,
+        comment: [...state.comment, action.payload],
       };
     case GET_COMMENT_SUCCESS:
       return {

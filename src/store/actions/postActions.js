@@ -104,12 +104,12 @@ export const downvote = (id) => async (dispatch) => {
 // Add comment
 export const addComment = (user_id, post_id, comment) => async (dispatch) => {
   try {
-    const { data } = await axios.post(`${API}/comment//new/add`, {
+    const { data } = await axios.post(`${API}/comment/new/add`, {
       user_id,
       post_id,
       comment,
     });
-    console.log(data);
+    console.log(">>", data.comment);
     dispatch({ type: ADD_COMMENT_SUCCESS, payload: data.comment });
   } catch (error) {
     console.log(error.message);

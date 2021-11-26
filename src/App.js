@@ -17,6 +17,10 @@ import SinglePost from "./containers/post/singlepost/SinglePost";
 import Create from "./containers/post/create/Create";
 import Edit from "./containers/post/edit/Edit";
 
+// User components
+import Profile from "./containers/profile/Profile";
+import CompleteProfile from "./containers/profile/complete-profile/CompleteProfile";
+
 const App = () => {
   return (
     <>
@@ -41,6 +45,10 @@ const App = () => {
           <Route path="/view/:id" exact component={SinglePost} />
           <Route path="/create" component={Create} />
           <Route path="/edit/:id" component={Edit} />
+
+          {/* USER ROUTES */}
+          <Route path="/profile" component={Profile} />
+          <Route path="/edit-profile" component={CompleteProfile} />
         </Switch>
       </Router>
     </>

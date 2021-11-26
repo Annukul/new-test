@@ -3,11 +3,13 @@ import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { authReducer } from "./reducers/authReducers";
 import { commentReducers, postReducer } from "./reducers/postReducers";
+import { userDetailsReducer } from "./reducers/userReducers";
 
 const reducer = combineReducers({
   auth: authReducer,
   posts: postReducer,
   comments: commentReducers,
+  userDetails: userDetailsReducer,
 });
 
 let initialState = {};

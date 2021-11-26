@@ -1,7 +1,10 @@
 import React from "react";
 
 const Form = ({ handleChange, setFile, handleSubmit, postf }) => {
-  const { post } = postf;
+  if (!postf) {
+    return <div>Loading...</div>;
+  }
+  console.log(postf.post.title);
   return (
     <div>
       <form action="" className="create-form" onSubmit={handleSubmit}>
@@ -21,7 +24,7 @@ const Form = ({ handleChange, setFile, handleSubmit, postf }) => {
               <label htmlFor="title">Title</label>
               <input
                 type="text"
-                defaultValue={post.title}
+                defaultValue={postf.post.title}
                 name="title"
                 onChange={handleChange}
               />
@@ -30,7 +33,7 @@ const Form = ({ handleChange, setFile, handleSubmit, postf }) => {
               <label htmlFor="excrept">Excrept</label>
               <input
                 type="text"
-                defaultValue={post.excrept}
+                defaultValue={postf.post.excrept}
                 name="excrept"
                 onChange={handleChange}
               />
@@ -39,7 +42,7 @@ const Form = ({ handleChange, setFile, handleSubmit, postf }) => {
               <label htmlFor="flairs">Flairs</label>
               <input
                 type="text"
-                // defaultValue={post.flairs.map((flair) => flair)}
+                defaultValue={postf.post.flairs}
                 name="flair"
                 onChange={handleChange}
               />
@@ -52,7 +55,7 @@ const Form = ({ handleChange, setFile, handleSubmit, postf }) => {
                 id=""
                 cols="30"
                 rows="10"
-                defaultValue={post.description}
+                defaultValue={postf.post.description}
                 placeholder="Post Desciption"
                 onChange={handleChange}
               ></textarea>

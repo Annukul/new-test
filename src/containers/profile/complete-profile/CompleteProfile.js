@@ -2,7 +2,11 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 
 import { addUserDetails } from "../../../store/actions/userActions";
-import { checkLocalStorage } from "../../../config/localStorage";
+import {
+  checkLocalStorage,
+  getDataLocalStorage,
+} from "../../../config/localStorage";
+import { getUserDetails } from "../../../store/actions/userActions";
 
 import Form from "./form";
 import arrow from "../../../assets/icons/arrow.png";
@@ -13,6 +17,8 @@ const CompleteProfile = ({ history }) => {
   if (!check) {
     history.push("/login");
   }
+  // const user_id = getDataLocalStorage("token").id;
+
   const dispatch = useDispatch();
   const [details, setDetails] = useState({
     collegeName: "",
@@ -27,10 +33,8 @@ const CompleteProfile = ({ history }) => {
     phoneNumber: "",
     twitter: "",
     linkedin: "",
-    internships: "",
-    jobs: "",
-    certificates: "",
-    achievements: "",
+    currentCity: "",
+    currentState: "",
   });
 
   const {
@@ -46,10 +50,8 @@ const CompleteProfile = ({ history }) => {
     phoneNumber,
     twitter,
     linkedin,
-    internships,
-    jobs,
-    certificates,
-    achievements,
+    currentCity,
+    currentState,
   } = details;
 
   const handleSubmit = (e) => {
@@ -66,10 +68,11 @@ const CompleteProfile = ({ history }) => {
         professionalEmailId,
         phoneNumber,
         twitter,
-        linkedin
+        linkedin,
+        currentCity,
+        currentState
       )
     );
-    console.log(details);
     e.preventDefault();
     history.push("/profile");
   };

@@ -1,8 +1,8 @@
 import React from "react";
 import { Fragment } from "react";
-import "./auth.css";
+// import "./auth.css";
 
-const AuthFooter = () => {
+const AuthF = () => {
   return (
     <Fragment>
       <footer>
@@ -17,4 +17,4 @@ const AuthFooter = () => {
   );
 };
 
-export default AuthFooter;
+export default AuthF;

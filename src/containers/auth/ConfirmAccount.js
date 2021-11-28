@@ -5,8 +5,8 @@ import { useLocation } from "react-router-dom";
 import { API } from "../../config/API";
 
 // components
-import AuthNavbar from "./AuthNavbar";
-import AuthFooter from "./AuthFooter";
+import AuthN from "./AuthN";
+import AuthF from "./AuthF";
 
 const ConfirmAccount = ({ history }) => {
   const divStyles = {
@@ -38,7 +38,7 @@ const ConfirmAccount = ({ history }) => {
 
   return (
     <>
-      <AuthNavbar />
+      <AuthN />
       <div className="lu">
         <div style={divStyles}>
           <button style={buttonStyles} onClick={verify}>
@@ -60,7 +60,7 @@ const ConfirmAccount = ({ history }) => {
           )}
         </div>
       </div>
-      <AuthFooter />
+      <AuthF />
     </>
   );
 };

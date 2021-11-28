@@ -9,7 +9,7 @@ const reducer = combineReducers({
   auth: authReducer,
   posts: postReducer,
   comments: commentReducers,
-  userDetails: userDetailsReducer,
+  user: userDetailsReducer,
 });
 
 let initialState = {};

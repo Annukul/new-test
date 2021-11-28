@@ -5,9 +5,9 @@ import { useDispatch } from "react-redux";
 import { login } from "../../store/actions/authActions";
 import { checkLocalStorage } from "../../config/localStorage";
 
-// Components
-import AuthNavbar from "./AuthNavbar";
-import AuthFooter from "./AuthFooter";
+// components
+import AuthN from "./AuthN";
+import AuthF from "./AuthF";
 
 const Login = ({ history }) => {
   const check = checkLocalStorage("token");
@@ -40,7 +40,7 @@ const Login = ({ history }) => {
   return (
     <div className="dad">
       <div className="sec1">
-        <AuthNavbar />
+        <AuthN />
         <div className="lu">
           <form onSubmit={loginHandler}>
             <div className="dtls">
@@ -73,7 +73,7 @@ const Login = ({ history }) => {
             </div>
           </form>
         </div>
-        <AuthFooter />
+        <AuthF />
       </div>
     </div>
   );

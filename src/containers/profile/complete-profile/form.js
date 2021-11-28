@@ -28,9 +28,19 @@ const Form = ({ handleSubmit, handleChange }) => {
             <label htmlFor="duration">Duration</label>
             <div className="collegeDuration">
               <label htmlFor="from">From</label>
-              <input type="date" name="from" placeholder="From" />
+              <input
+                type="date"
+                name="from"
+                placeholder="From"
+                onChange={handleChange}
+              />
               <label htmlFor="to">To</label>
-              <input type="date" name="to" placeholder="To" />
+              <input
+                type="date"
+                name="to"
+                placeholder="To"
+                onChange={handleChange}
+              />
             </div>
           </div>
           <p>

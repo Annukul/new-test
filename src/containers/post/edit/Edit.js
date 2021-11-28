@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useLocation, Link } from "react-router-dom";
 import { checkLocalStorage } from "../../../config/localStorage";
 import { updatPost, getSinglePost } from "../../../store/actions/postActions";
@@ -28,8 +28,6 @@ const Edit = ({ history }) => {
 
   const location = useLocation();
   const post_id = location.pathname.split("/")[2];
-
-  const postf = useSelector((state) => state.posts);
 
   useEffect(() => {
     dispatch(getSinglePost(post_id));
@@ -70,7 +68,6 @@ const Edit = ({ history }) => {
             handleSubmit={handleSubmit}
             handleChange={handleChange}
             setFile={setFile}
-            postf={postf}
           />
         </div>
       </div>

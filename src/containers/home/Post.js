@@ -8,10 +8,11 @@ import { upvote, downvote } from "../../store/actions/postActions";
 // Icons
 import profile from "../../assets/icons/profile.png";
 import upvoteicon from "../../assets/icons/upvote.png";
-import downvoteicon from "../../assets/icons/downvote.png";
+// import downvoteicon from "../../assets/icons/downvote.png";
 import ribbon from "../../assets/icons/ribbon.png";
 
 const Post = ({ post, history }) => {
+  // console.log(post);
   const dispatch = useDispatch();
   const [uvote, setUvote] = useState(post.upvote);
   const [dvote, setDvote] = useState(post.downvote);
@@ -61,14 +62,22 @@ const Post = ({ post, history }) => {
           <div className="post-actions">
             <div className="post-actions-left">
               <Link to="" className="post-actions-like">
-                <button onClick={doUpvote}>
-                  <img src={upvoteicon} alt="icon" className="icons" />
+                <button onClick={doUpvote} className="vote-btns">
+                  <img
+                    src={upvoteicon}
+                    alt="icon"
+                    className="icons upvote-btn"
+                  />
                 </button>
                 <span className="post-like-count">{uvote}</span>
               </Link>
-              <Link to="" className="post-actions-comment">
-                <button onClick={doDownvote}>
-                  <img src={downvoteicon} alt="icon" className="icons" />
+              <Link to="" className="post-actions-like">
+                <button onClick={doDownvote} className="vote-btns">
+                  <img
+                    src={upvoteicon}
+                    alt="icon"
+                    className="icons downvote-icon"
+                  />
                 </button>
                 <span className="post-comment-count">{dvote}</span>
               </Link>

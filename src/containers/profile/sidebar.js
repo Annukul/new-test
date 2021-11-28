@@ -1,5 +1,7 @@
-import React from "react";
-import Achievements from "./options/Achievements";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+import { getUserDetails } from "../../store/actions/userActions";
 
 const Sidebar = ({
   setPost,
@@ -8,6 +10,15 @@ const Sidebar = ({
   setCertificates,
   setAchievements,
 }) => {
+  const dispatch = useDispatch();
+
+  const det = useSelector((state) => state.user);
+  console.log(det);
+
+  // useEffect(() => {
+  //   dispatch(getUserDetails);
+  // }, []);
+
   const forPost = () => {
     setPost(true);
     setJobs(false);
@@ -23,6 +34,7 @@ const Sidebar = ({
     setAchievements(false);
   };
   const forDetails = () => {
+    dispatch(getUserDetails);
     setPost(false);
     setJobs(false);
     setDetails(true);

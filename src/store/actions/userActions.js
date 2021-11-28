@@ -3,6 +3,8 @@ import { API } from "../../config/API";
 import {
   ADD_USER_DETAILS_REQUEST,
   ADD_USER_DETAILS_SUCCESS,
+  GET_USER_DETAILS_REQUEST,
+  GET_USER_DETAILS_SUCCESS,
 } from "../userConstants";
 
 import { getDataLocalStorage } from "../../config/localStorage";
@@ -55,9 +57,21 @@ export const addUserDetails =
           currentCity,
         },
       });
-      console.log(data);
       dispatch({ type: ADD_USER_DETAILS_SUCCESS, payload: data });
     } catch (error) {
       console.log(error.message);
     }
   };
+
+export const getUserDetails = () => async (dispatch) => {
+  try {
+    dispatch({ type: GET_USER_DETAILS_REQUEST });
+    const user_id = getDataLocalStorage("token").id;
+    console.log("dispatched");
+    const { data } = await axios.get(`${API}/user/getUserDetails/${user_id}`);
+    console.log(data);
+    dispatch({ type: GET_USER_DETAILS_SUCCESS, payload: data });
+  } catch (error) {
+    console.log(error.message);
+  }
+};

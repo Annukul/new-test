@@ -7,11 +7,11 @@ import { register } from "../../store/actions/authActions";
 
 import { checkLocalStorage } from "../../config/localStorage";
 
-import "./auth.css";
+// import "./auth.css";
 
 // components
-import AuthNavbar from "./AuthNavbar";
-import AuthFooter from "./AuthFooter";
+import AuthN from "./AuthN";
+import AuthF from "./AuthF";
 
 const Signup = ({ history }) => {
   const check = checkLocalStorage("token");
@@ -48,7 +48,7 @@ const Signup = ({ history }) => {
   return (
     <div className="dad">
       <div className="sec1">
-        <AuthNavbar />
+        <AuthN />
         <div className="su">
           <form onSubmit={handleSubmit}>
             <div className="dtls">
@@ -93,7 +93,7 @@ const Signup = ({ history }) => {
             </div>
           </form>
         </div>
-        <AuthFooter />
+        <AuthF />
       </div>
     </div>
   );

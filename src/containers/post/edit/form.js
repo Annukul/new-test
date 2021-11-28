@@ -1,10 +1,14 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
-const Form = ({ handleChange, setFile, handleSubmit, postf }) => {
-  if (!postf) {
+const Form = ({ handleChange, setFile, handleSubmit }) => {
+  const spost = useSelector((state) => state.posts);
+  const { post } = spost;
+
+  if (!post) {
     return <div>Loading...</div>;
   }
-  console.log(postf.post.title);
+
   return (
     <div>
       <form action="" className="create-form" onSubmit={handleSubmit}>
@@ -24,7 +28,7 @@ const Form = ({ handleChange, setFile, handleSubmit, postf }) => {
               <label htmlFor="title">Title</label>
               <input
                 type="text"
-                defaultValue={postf.post.title}
+                defaultValue={post.title}
                 name="title"
                 onChange={handleChange}
               />
@@ -33,7 +37,7 @@ const Form = ({ handleChange, setFile, handleSubmit, postf }) => {
               <label htmlFor="excrept">Excrept</label>
               <input
                 type="text"
-                defaultValue={postf.post.excrept}
+                defaultValue={post.excrept}
                 name="excrept"
                 onChange={handleChange}
               />
@@ -42,7 +46,7 @@ const Form = ({ handleChange, setFile, handleSubmit, postf }) => {
               <label htmlFor="flairs">Flairs</label>
               <input
                 type="text"
-                defaultValue={postf.post.flairs}
+                defaultValue={post.flairs}
                 name="flair"
                 onChange={handleChange}
               />
@@ -55,7 +59,7 @@ const Form = ({ handleChange, setFile, handleSubmit, postf }) => {
                 id=""
                 cols="30"
                 rows="10"
-                defaultValue={postf.post.description}
+                defaultValue={post.description}
                 placeholder="Post Desciption"
                 onChange={handleChange}
               ></textarea>

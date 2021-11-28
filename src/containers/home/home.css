@@ -253,6 +253,17 @@ main {
   align-items: center;
   padding: 0;
 }
+.vote-btns {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.post-actions-like {
+  margin-right: 5px;
+}
+.downvote-icon {
+  transform: scaleY(-1);
+}
 .post-actions-right a {
   display: flex;
   align-items: center;

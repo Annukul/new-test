@@ -10,7 +10,7 @@ import Options from "./Options";
 import "./profile.css";
 
 const Profile = () => {
-  const [post, setPost] = useState(false);
+  const [post, setPost] = useState(true);
   const [jobs, setJobs] = useState(false);
   const [details, setDetails] = useState(false);
   const [certificates, setCertificates] = useState(false);

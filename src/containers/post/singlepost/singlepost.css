@@ -142,6 +142,25 @@ ul {
   border-radius: var(--default-radius);
   margin-left: 20px;
 }
+.single_post_comment {
+  font-family: "Markazi Text", serif;
+  border: var(--default-border);
+  padding: 10px 10px;
+  margin-bottom: 10px;
+}
+.single_post_comment p {
+  margin-left: 50px;
+  margin-bottom: 20px;
+}
+.comment_avatar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.comment_avatar small {
+  margin-left: 10px;
+  margin-right: 10px;
+}
 
 .single-post-right {
   display: flex;

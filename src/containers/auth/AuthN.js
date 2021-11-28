@@ -1,9 +1,9 @@
 import React from "react";
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
-import "./auth.css";
+// import "./auth.css";
 
-const AuthNavbar = () => {
+const AuthN = () => {
   return (
     <Fragment>
       {/* <input type="checkbox" name="" id="barcheck" /> */}
@@ -29,4 +29,4 @@ const AuthNavbar = () => {
   );
 };
 
-export default AuthNavbar;
+export default AuthN;

@@ -18,6 +18,8 @@ import {
   ADD_COMMENT_SUCCESS,
   GET_COMMENT_SUCCESS,
   POST_UPDATE_SUCCESS,
+  POST_DELETE_REQUEST,
+  POST_DELETE_SUCCESS,
 } from "../postConstants";
 
 import { getDataLocalStorage } from "../../config/localStorage";
@@ -80,6 +82,17 @@ export const updatPost =
       console.log(error.message);
     }
   };
+
+// Delete post
+export const postDelete = (post_id) => async (dispatch) => {
+  try {
+    dispatch({ type: POST_DELETE_REQUEST });
+    await axios.delete(`${API}/post/delete/${post_id}`);
+    dispatch({ type: POST_DELETE_SUCCESS });
+  } catch (error) {
+    console.log(error.message);
+  }
+};
 
 // Upvote post/:id/upvote
 export const upvote = (id) => async (dispatch) => {

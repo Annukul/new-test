@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 // Icons
 import house from "../../assets/icons/house.png";
@@ -14,14 +15,18 @@ const Sidebar = () => {
   return (
     <div className="options_menu">
       <ul className="options-list">
-        <li>
-          <img src={house} alt="icons" className="icons" />
-          Home
-        </li>
-        <li>
-          <img src={profile} alt="icons" className="icons" />
-          Profile
-        </li>
+        <Link to="/">
+          <li>
+            <img src={house} alt="icons" className="icons" />
+            Home
+          </li>
+        </Link>
+        <Link to="/profile">
+          <li>
+            <img src={profile} alt="icons" className="icons" />
+            Profile
+          </li>
+        </Link>
         <li>
           <img src={flowchart} alt="icons" className="icons" />
           Projects

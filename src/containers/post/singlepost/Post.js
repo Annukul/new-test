@@ -3,41 +3,50 @@ import moment from "moment";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
-import { addComment, getComments } from "../../../store/actions/postActions";
+import {
+  addComment,
+  getComments,
+  postDelete,
+} from "../../../store/actions/postActions";
 import { getDataLocalStorage } from "../../../config/localStorage";
 import Comment from "./comment";
 
 // Icons
 import like from "../../../assets/icons/like.png";
-import ribbon from "../../../assets/icons/ribbon.png";
+import bin from "../../../assets/icons/bin.png";
 import edit from "../../../assets/icons/editing.png";
 
 import code from "../../../assets/images/code.jpg";
 import profile from "../../../assets/icons/profile.png";
 
-const Post = ({ post }) => {
+const Post = ({ post, history }) => {
   const dispatch = useDispatch();
   const [commentt, setCommentt] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [user, setUser] = useState(true);
+  // const [deleted, setDeleted] = useState(false);
 
-  const decoded = getDataLocalStorage("token");
-  const user_id = decoded.id;
+  const user_id = getDataLocalStorage("token").id;
   const post_id = post._id;
 
   const comments = useSelector((state) => state.comments);
   const { comment } = comments;
-  console.log(comment);
 
   useEffect(() => {
-    setLoading(true);
+    if (post.user_id !== user_id) setUser(false);
+  }, []);
+
+  useEffect(() => {
     dispatch(getComments(post_id));
-    setLoading(false);
   }, [dispatch, post_id]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     dispatch(addComment(user_id, post_id, commentt));
+  };
+
+  const deletePost = () => {
+    dispatch(postDelete(post_id));
+    history.push("/");
   };
 
   if (!post.flair) {
@@ -59,19 +68,25 @@ const Post = ({ post }) => {
             <li>
               <br />
             </li>
-            <li>
-              <Link to="#">
-                <img src={ribbon} alt="Icon" className="icons-bg" />
-              </Link>
-            </li>
-            <li>
-              <br />
-            </li>
-            <li>
-              <Link to={`/edit/${post._id}`}>
-                <img src={edit} alt="Icon" className="icons-bg" />
-              </Link>
-            </li>
+            {user ? (
+              <>
+                <li>
+                  <Link to="#" onClick={deletePost}>
+                    <img src={bin} alt="Icon" className="icons-bg" />
+                  </Link>
+                </li>
+                <li>
+                  <br />
+                </li>
+                <li>
+                  <Link to={`/edit/${post._id}`}>
+                    <img src={edit} alt="Icon" className="icons-bg" />
+                  </Link>
+                </li>
+              </>
+            ) : (
+              ""
+            )}
           </ul>
         </aside>
       </div>

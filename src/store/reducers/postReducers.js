@@ -1,23 +1,18 @@
 import {
   POST_UPLOAD_REQUEST,
   POST_UPLOAD_SUCCESS,
-  POST_UPLOAD_FAIL,
   GET_POST_REQUEST,
   GET_POST_SUCCESS,
-  GET_POST_FAIL,
   GET_SINGLE_POST_REQUEST,
   GET_SINGLE_POST_SUCCESS,
-  GET_SINGLE_POST_FAIL,
   CLEAR_ERRORS,
   UPVOTE_SUCCESS,
-  UPVOTE_FAIL,
   DOWNVOTE_SUCCESS,
-  DOWNVOTE_FAIL,
   ADD_COMMENT_SUCCESS,
-  ADD_COMMENT_FAIL,
   GET_COMMENT_SUCCESS,
-  GET_COMMENT_FAIL,
   POST_UPDATE_SUCCESS,
+  POST_DELETE_REQUEST,
+  POST_DELETE_SUCCESS,
 } from "../postConstants";
 
 export const postReducer = (state = { post: {} }, action) => {
@@ -56,6 +51,14 @@ export const postReducer = (state = { post: {} }, action) => {
     case POST_UPDATE_SUCCESS:
       return {
         post: action.payload,
+      };
+    case POST_DELETE_REQUEST:
+      return {
+        loading: true,
+      };
+    case POST_DELETE_SUCCESS:
+      return {
+        success: true,
       };
     case CLEAR_ERRORS:
       return {

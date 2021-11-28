@@ -5,7 +5,6 @@ import { useDispatch } from "react-redux";
 import { logout } from "../../store/actions/authActions";
 
 import logo from "../../assets/icons/logo.png";
-import notification from "../../assets/icons/notification.png";
 import search from "../../assets/icons/search.png";
 import profile from "../../assets/icons/profile.png";
 
@@ -14,7 +13,7 @@ import "../../index.css";
 const Header = () => {
   const dispatch = useDispatch();
 
-  const logout = () => {
+  const logoutUser = () => {
     dispatch(logout("token"));
   };
 
@@ -42,7 +41,7 @@ const Header = () => {
         <Link to="/create" className="create-btn">
           Create Post
         </Link>
-        <button onClick={logout} className="logout">
+        <button onClick={logoutUser} className="logout">
           Logout
         </button>
         <Link to="/profile" className="profile-icon">

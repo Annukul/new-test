@@ -1,7 +1,7 @@
 import React from "react";
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
-// import "./auth.css";
+import "./auth.css";
 
 const AuthN = () => {
   return (

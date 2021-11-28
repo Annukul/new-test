@@ -1,6 +1,6 @@
 import React from "react";
 import { Fragment } from "react";
-// import "./auth.css";
+import "./auth.css";
 
 const AuthF = () => {
   return (

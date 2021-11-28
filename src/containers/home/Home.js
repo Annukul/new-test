@@ -14,7 +14,7 @@ import {
   getDataLocalStorage,
   checkLocalStorage,
 } from "../../config/localStorage";
-import { logout, getUser, clearErrors } from "../../store/actions/authActions";
+import { getUser } from "../../store/actions/authActions";
 import { getAllPosts } from "../../store/actions/postActions";
 
 const Home = ({ history }) => {
@@ -25,21 +25,11 @@ const Home = ({ history }) => {
   const data = getDataLocalStorage("token");
 
   const dispatch = useDispatch();
-  const { isAuthenticated, user, error } = useSelector((state) => state.auth);
+  const { isAuthenticated } = useSelector((state) => state.auth);
 
   useEffect(() => {
     dispatch(getAllPosts());
   }, [dispatch]);
-
-  // useEffect(() => {
-  //   if (!isAuthenticated) {
-  //     history.push("/login");
-  //   }
-  //   if (error) {
-  //     console.log(error);
-  //     dispatch(clearErrors());
-  //   }
-  // }, [dispatch, isAuthenticated, error, history]);
 
   useEffect(() => {
     const getUserDetails = async () => {
@@ -47,6 +37,7 @@ const Home = ({ history }) => {
         dispatch(getUser(data._id));
       }
     };
+    getUserDetails();
   }, [dispatch, data._id, isAuthenticated]);
 
   // const logoutHandler = async (e) => {

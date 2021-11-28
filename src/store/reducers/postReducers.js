@@ -19,13 +19,11 @@ export const postReducer = (state = { post: {} }, action) => {
   switch (action.type) {
     case POST_UPLOAD_REQUEST:
     case GET_POST_REQUEST:
-    case GET_POST_REQUEST:
     case GET_SINGLE_POST_REQUEST:
       return {
         loading: true,
       };
     case POST_UPLOAD_SUCCESS:
-    case GET_POST_SUCCESS:
       return {
         ...state,
         loading: false,

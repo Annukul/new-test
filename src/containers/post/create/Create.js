@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { newPost } from "../../../store/actions/postActions";
 
 import Form from "./form";
@@ -31,7 +31,7 @@ const Create = ({ history }) => {
   const { title, excrept, flair, description } = post;
 
   const dispatch = useDispatch();
-  const { isAuthenticated } = useSelector((state) => state.auth);
+  // const { isAuthenticated } = useSelector((state) => state.auth);
 
   //   useEffect(() => {
   //     if (isAuthenticated) {

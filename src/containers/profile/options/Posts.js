@@ -53,17 +53,17 @@ const Posts = () => {
           <div class="post-actions">
             <div class="post-actions-left">
               <Link to="#" class="post-actions-like">
-                <img src={like} class="icons" />
+                <img src={like} class="icons" alt="Like btn" />
                 <span class="post-like-count">3</span>
               </Link>
               <Link to="#" class="post-actions-comment">
-                <img src={comment} class="icons" />
+                <img src={comment} class="icons" alt="Comment btn" />
                 <span class="post-comment-count">3</span>
               </Link>
             </div>
             <div class="post-actions-right">
               <Link to="#" class="post-actions-save">
-                <img src={ribbon} class="icons" />
+                <img src={ribbon} class="icons" alt="Save btn" />
                 <span class="post-save-desc">Save</span>
               </Link>
             </div>
@@ -110,17 +110,17 @@ const Posts = () => {
           <div class="post-actions">
             <div class="post-actions-left">
               <Link to="#" class="post-actions-like">
-                <img src={like} class="icons" />
+                <img src={like} class="icons" alt="text" />
                 <span class="post-like-count">3</span>
               </Link>
               <Link to="#" class="post-actions-comment">
-                <img src={comment} class="icons" />
+                <img src={comment} class="icons" alt="text" />
                 <span class="post-comment-count">3</span>
               </Link>
             </div>
             <div class="post-actions-right">
               <Link to="#" class="post-actions-save">
-                <img src={ribbon} class="icons" />
+                <img src={ribbon} class="icons" alt="text" />
                 <span class="post-save-desc">Save</span>
               </Link>
             </div>
@@ -167,17 +167,17 @@ const Posts = () => {
           <div class="post-actions">
             <div class="post-actions-left">
               <Link to="#" class="post-actions-like">
-                <img src={like} class="icons" />
+                <img src={like} class="icons" alt="text" />
                 <span class="post-like-count">3</span>
               </Link>
               <Link to="#" class="post-actions-comment">
-                <img src={comment} class="icons" />
+                <img src={comment} class="icons" alt="text" />
                 <span class="post-comment-count">3</span>
               </Link>
             </div>
             <div class="post-actions-right">
               <Link to="#" class="post-actions-save">
-                <img src={ribbon} class="icons" />
+                <img src={ribbon} class="icons" alt="text" />
                 <span class="post-save-desc">Save</span>
               </Link>
             </div>

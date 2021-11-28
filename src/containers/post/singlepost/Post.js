@@ -33,7 +33,7 @@ const Post = ({ post, history }) => {
 
   useEffect(() => {
     if (post.user_id !== user_id) setUser(false);
-  }, []);
+  }, [post.user_id, user_id]);
 
   useEffect(() => {
     dispatch(getComments(post_id));

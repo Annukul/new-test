@@ -1,12 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
 import { addUserDetails } from "../../../store/actions/userActions";
-import {
-  checkLocalStorage,
-  getDataLocalStorage,
-} from "../../../config/localStorage";
-import { getUserDetails } from "../../../store/actions/userActions";
+import { checkLocalStorage } from "../../../config/localStorage";
+// import { getUserDetails } from "../../../store/actions/userActions";
 
 import Form from "./form";
 import arrow from "../../../assets/icons/arrow.png";

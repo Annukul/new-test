@@ -1,12 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+
+import { logout } from "../../store/actions/authActions";
 
 import logo from "../../assets/icons/logo.png";
 import notification from "../../assets/icons/notification.png";
 import search from "../../assets/icons/search.png";
 import profile from "../../assets/icons/profile.png";
 
+import "../../index.css";
+
 const Header = () => {
+  const dispatch = useDispatch();
+
+  const logout = () => {
+    dispatch(logout("token"));
+  };
+
   return (
     <header>
       <div className="logo_search">
@@ -31,13 +42,9 @@ const Header = () => {
         <Link to="/create" className="create-btn">
           Create Post
         </Link>
-        <Link to="" className="notification-icon">
-          <img
-            className="notification-img"
-            src={notification}
-            alt="notification"
-          />
-        </Link>
+        <button onClick={logout} className="logout">
+          Logout
+        </button>
         <Link to="/profile" className="profile-icon">
           <img className="profile-img" src={profile} alt="profile" />
         </Link>

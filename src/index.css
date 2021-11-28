@@ -116,3 +116,12 @@ header {
   width: 38px;
   height: 38px;
 }
+.logout {
+  font-size: 12px;
+  padding: 8px 15px;
+  background: rgb(250, 166, 166);
+  border-radius: var(--default-radius);
+  border: none;
+  font-weight: 400;
+  cursor: pointer;
+}
